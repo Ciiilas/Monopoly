@@ -1,2 +1,2 @@
 
-addSbtPlugin("org.scoverega" % "sbt-scoverage" % "2.0.8")
+addSbtPlugin("org.scoverege" % "sbt-scoverage" % "2.0.8")
