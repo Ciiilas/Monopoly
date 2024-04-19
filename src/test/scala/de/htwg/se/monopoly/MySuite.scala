@@ -1,5 +1,5 @@
-// For more information on writing tests, see
-// https://scalameta.org/munit/docs/getting-started.html
+import org.scalatest.funsuite.AnyFunSuite
+import de.htwg.se.monopoly
 class MySuite extends munit.FunSuite {
   test("example test that succeeds") {
     val obtained = 42
