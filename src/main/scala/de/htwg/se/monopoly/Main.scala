@@ -3,11 +3,9 @@ package de.htwg.se.monopoly
   playingfield(1,1,1)
   playingfield(2,2,2)
   playingfield(8,10,5)
-  playingfield()
   barTop(1,1)
   barTop(1,2)
   barTop(2,1)
-  cells()
   cells(1,1,1)
   cells(1,2,1)
   cells(1,1,2)
@@ -19,4 +17,5 @@ package de.htwg.se.monopoly
   barBottom(1, 1)
   barBottom(1, 2)
   barBottom(2, 1)
+  print(cell(2,1))
 }
