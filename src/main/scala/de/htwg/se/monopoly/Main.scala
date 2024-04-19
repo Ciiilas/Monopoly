@@ -3,4 +3,5 @@ package de.htwg.se.monopoly
   playingfield(1,1,1)
   playingfield(2,2,2)
   playingfield(8,10,5)
+  playingfield()
 }
