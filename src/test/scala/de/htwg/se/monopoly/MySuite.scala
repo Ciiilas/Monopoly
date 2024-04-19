@@ -1,9 +1,9 @@
-import org.scalatest.funsuite.AnyFunSuite
-import de.htwg.se.monopoly
-class MySuite extends munit.FunSuite {
-  test("example test that succeeds") {
-    val obtained = 42
-    val expected = 42
-    assertEquals(obtained, expected)
-  }
-}
+@main def monopoly(): Unit =
+  val board_size = 5
+  val card_size_x = 7
+  val card_size_y = 8
+
+  println("┌" + ("─"* card_size_x + "┬")*(board_size-1) + "─"* card_size_x + "┐")
+  for(a <- 1 to card_size_y)
+    println("│" + (" "* card_size_x + "│" )*(board_size-1) + " "*card_size_x + "│")
+  println("└" + ("─"* card_size_x + "┴")*(board_size-1) + "─"* card_size_x + "┘")
