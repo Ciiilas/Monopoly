@@ -1,3 +1,5 @@
+import de.htwg.se.monopoly
+import org.scalatest.funsuite.AnyFunSuite
 @main def monopoly(): Unit =
   val board_size = 5
   val card_size_x = 7
