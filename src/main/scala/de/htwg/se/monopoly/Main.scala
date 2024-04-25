@@ -1,21 +1,7 @@
 package de.htwg.se.monopoly
+
+import de.htwg.se.monopoly.model.TUI
 @main def monopoly(): Unit = {
-  playingfield(1,1,1)
-  playingfield(2,2,2)
-  playingfield(8,10,5)
-  barTop(1,1)
-  barTop(1,2)
-  barTop(2,1)
-  cells(1,1,1)
-  cells(1,2,1)
-  cells(1,1,2)
-  cells(1,2,2)
-  cells(2,1,1)
-  cells(2,2,1)
-  cells(2,1,2)
-  cells(2,2,2)
-  barBottom(1, 1)
-  barBottom(1, 2)
-  barBottom(2, 1)
-  print(cell(2,1))
+  val tui = new TUI
+  println(tui.playingfield(2,2,2))
 }
