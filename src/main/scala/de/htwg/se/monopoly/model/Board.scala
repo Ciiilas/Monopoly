@@ -2,7 +2,7 @@ package de.htwg.se.monopoly.model
 
 import scala.math.Equiv
 
-class TUI {
+class Board {
 
 def playingfield(board_size: Int,card_size_x: Int, card_size_y: Int): Unit = {
   println(barTop(board_size, card_size_x))
@@ -12,14 +12,14 @@ def playingfield(board_size: Int,card_size_x: Int, card_size_y: Int): Unit = {
 }
 
 def barTop(board_size: Int, card_size_x: Int): String = {
-  return("┌" + ("─" * card_size_x + "┬") * (board_size - 1) + "─" * card_size_x + "┐")
+  "┌" + ("─" * card_size_x + "┬") * (board_size - 1) + "─" * card_size_x + "┐"
 }
 
 def cell(board_size: Int, card_size_x: Int): String = {
-  return("│" + (" " * card_size_x + "│") * (board_size - 1) + " " * card_size_x + "│")
+  "│" + (" " * card_size_x + "│") * (board_size - 1) + " " * card_size_x + "│"
 }
 
 def barBottom(board_size: Int, card_size_x: Int): String = {
-  return("└" + ("─" * card_size_x + "┴") * (board_size - 1) + "─" * card_size_x + "┘")
+  "└" + ("─" * card_size_x + "┴") * (board_size - 1) + "─" * card_size_x + "┘"
 }
 }
