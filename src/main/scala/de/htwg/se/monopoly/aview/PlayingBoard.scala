@@ -1,3 +1,6 @@
 package de.htwg.se.monopoly.aview
 
-case class PlayingBoard()
+case class PlayingBoard() {
+
+
+}
