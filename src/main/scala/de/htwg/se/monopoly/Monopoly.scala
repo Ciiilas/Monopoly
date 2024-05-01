@@ -9,9 +9,6 @@ object Monopoly {
   val Board = new Board
   def main(args: Array[String]): Unit = {
 
-
-
-
     var input: String = ""
     var processState: String = ""
 

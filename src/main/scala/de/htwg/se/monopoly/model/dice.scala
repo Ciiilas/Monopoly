@@ -7,7 +7,6 @@ class dice {
     val thow2 = random.between(1, 7)
 
   }
-  def doublets(thow1:Int, thow2:Int): Boolean = {
-    thow1 == thow2
-  }
+  def doublets(thow1:Int, thow2:Int): Boolean = thow1 == thow2
+    
 }
