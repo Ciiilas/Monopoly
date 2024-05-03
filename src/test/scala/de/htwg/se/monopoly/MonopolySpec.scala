@@ -1,11 +1,11 @@
 package de.htwg.se.monopoly
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers._
+import de.htwg.se.monopoly.model.Board_output_on_console
 
 class MonopolySpec extends AnyWordSpec {
   "Monopoly" should {
     "have a scalable barTop" in {
-      de.htwg.se.monopoly.model.Board_output_on_console()
       barTop(1,1) should be("┌─┐")
       barTop(1,2) should be("┌──┐")
       barTop(2,1) should be("┌─┬─┐")
