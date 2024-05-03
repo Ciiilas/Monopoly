@@ -1,12 +1,15 @@
 package de.htwg.se.monopoly
 
 import de.htwg.se.monopoly.aview.Tui
-import de.htwg.se.monopoly.model.Board_output_on_console
+import de.htwg.se.monopoly.controller.Controller
+import de.htwg.se.monopoly.model.{Board, Card, Player,Figure}
 
 import scala.io.StdIn.readLine
 
 object Monopoly {
-  val Tui = new Tui
+  println(Figure.Auto)
+  //val controller = new Controller(new Board)
+  //val Tui = new Tui(controller)
   //val Board = new Board_output_on_console
   def main(args: Array[String]): Unit = {
 
@@ -15,10 +18,10 @@ object Monopoly {
 
     while input != "q"
     do {
-      Board.playingfield(2,2,2)
+      //Board.playingfield(2,2,2)
       processState = readLine()
       input = readLine()
-      Tui.processInputLine(input, processState)
+      //Tui.processInputLine(input, processState)
     }
   }
 }

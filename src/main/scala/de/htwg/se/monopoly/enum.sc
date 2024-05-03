@@ -1,4 +1,16 @@
-import de.htwg.se.monopoly.model.Street_Names
+enum Figure:
 
-println(Street_Names.Schlossallee)
+  case Boot
+  case Schuh
+  case Hut
+  case Katze
+  case Hund
+  case Auto
+  case Bügeleisen
+  case Schubkarre
+  case Geldsack
+  case Fingerhut
+
+
+println(Figure.Boot)
 
