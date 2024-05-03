@@ -1,89 +1,89 @@
 package de.htwg.se.monopoly.model
 
-enum Street_Names:
-  case Schlossallee
-  case Bahnhofstrasse
-  case Parkstrasse
-  case Seestrasse
-  case Hafenstrasse
-  case Chausseestrasse
-  case Elisenstrasse
-  case Opernplatz
-  case Theaterplatz
-  case Badstrasse
-  case Turmstrasse
-  case Goethestrasse
-  case Rathausplatz
-  case Poststrasse
-  case Hauptstrasse
-  case Kirchplatz
-  case Ringstrasse
-  case Schillerstrasse
-  case Bismarckstrasse
-  case Goetheplatz
-  case Kaiserstrasse
-  case Lessingstrasse
-  case Wilhelmstrasse
-  case Auguststrasse
-  case Friedrichstrasse
-  case Bergstrasse
-  case Kurfurstendamm
-  case Alexanderplatz
-  case Breitscheidplatz
-  case Friedrichshain
-  case Schoneberg
-  case Charlottenburg
-  case Wedding
-  case Kreuzberg
-  case Neukolln
-  case Spandau
-  case Tempelhof
-  case Wilmersdorf
-  case Mitte
-  case Steglitz
-  case Tiergarten
-  case Lichtenberg
-  case Reinickendorf
-  case Marzahn
-  case Hellersdorf
-  case Treptow
-  case   Moabit
-  case Kopenick
-  case Zehlendorf
-  case Friedenau
-  case Pankow
-  case Adlershof
-  case Hohenschonhausen
-  case Grunewald
-  case Rummelsburg
-  case Nikolassee
-  case Gesundbrunnen
-  case Britz
-  case Weissensee
-  case Fennpfuhl
-  case Mahlsdorf
-  case Buch
-  case Wilhelmstadt
-  case Karow
-  case Falkenberg
-  case Heinersdorf
-  case   Baumschulenweg
-  case Rahnsdorf
-  case Borsigwalde
-  case Rosenthal
-  case Karolinenhof
-  case Buchholz
-  case Kolln
-  case Schmockwitz
-  case Schmargendorf
-  case Kaulsdorf
-  case Lankwitz
-  case Niederschoneweide
-  case Frohnau
-  case Altglienicke
-  case Friedrichsfelde
-  case Bohnsdorf
-  case Karlshorst
-  case Planterwald
-  case Wartenberg
-  case Kladow
+sealed trait Street_Names
+  case object Schlossallee extends Street_Names
+  case object Bahnhofstrasse extends Street_Names
+  case object Parkstrasse extends Street_Names
+  case object Seestrasse extends Street_Names
+  case object Hafenstrasse extends Street_Names
+  case object Chausseestrasse extends Street_Names
+  case object Elisenstrasse extends Street_Names
+  case object Opernplatz extends Street_Names
+  case object Theaterplatz extends Street_Names
+  case object Badstrasse extends Street_Names
+  case object Turmstrasse extends Street_Names
+  case object Goethestrasse extends Street_Names
+  case object Rathausplatz extends Street_Names
+  case object Poststrasse extends Street_Names
+  case object Hauptstrasse extends Street_Names
+  case object Kirchplatz extends Street_Names
+  case object Ringstrasse extends Street_Names
+  case object Schillerstrasse extends Street_Names
+  case object Bismarckstrasse extends Street_Names
+  case object Goetheplatz extends Street_Names
+  case object Kaiserstrasse extends Street_Names
+  case object Lessingstrasse extends Street_Names
+  case object Wilhelmstrasse extends Street_Names
+  case object Auguststrasse extends Street_Names
+  case object Friedrichstrasse extends Street_Names
+  case object Bergstrasse extends Street_Names
+  case object Kurfurstendamm extends Street_Names
+  case object Alexanderplatz extends Street_Names
+  case object Breitscheidplatz extends Street_Names
+  case object Friedrichshain extends Street_Names
+  case object Schoneberg extends Street_Names
+  case object Charlottenburg extends Street_Names
+  case object Wedding extends Street_Names
+  case object Kreuzberg extends Street_Names
+  case object Neukolln extends Street_Names
+  case object Spandau extends Street_Names
+  case object Tempelhof extends Street_Names
+  case object Wilmersdorf extends Street_Names
+  case object Mitte extends Street_Names
+  case object Steglitz extends Street_Names
+  case object Tiergarten extends Street_Names
+  case object Lichtenberg extends Street_Names
+  case object Reinickendorf extends Street_Names
+  case object Marzahn extends Street_Names
+  case object Hellersdorf extends Street_Names
+  case object Treptow extends Street_Names
+  case object   Moabit extends Street_Names
+  case object Kopenick extends Street_Names
+  case object Zehlendorf extends Street_Names
+  case object Friedenau extends Street_Names
+  case object Pankow extends Street_Names
+  case object Adlershof extends Street_Names
+  case object Hohenschonhausen extends Street_Names
+  case object Grunewald extends Street_Names
+  case object Rummelsburg extends Street_Names
+  case object Nikolassee extends Street_Names
+  case object Gesundbrunnen extends Street_Names
+  case object Britz extends Street_Names
+  case object Weissensee extends Street_Names
+  case object Fennpfuhl extends Street_Names
+  case object Mahlsdorf extends Street_Names
+  case object Buch extends Street_Names
+  case object Wilhelmstadt extends Street_Names
+  case object Karow extends Street_Names
+  case object Falkenberg extends Street_Names
+  case object Heinersdorf extends Street_Names
+  case object   Baumschulenweg extends Street_Names
+  case object Rahnsdorf extends Street_Names
+  case object Borsigwalde extends Street_Names
+  case object Rosenthal extends Street_Names
+  case object Karolinenhof extends Street_Names
+  case object Buchholz extends Street_Names
+  case object Kolln extends Street_Names
+  case object Schmockwitz extends Street_Names
+  case object Schmargendorf extends Street_Names
+  case object Kaulsdorf extends Street_Names
+  case object Lankwitz extends Street_Names
+  case object Niederschoneweide extends Street_Names
+  case object Frohnau extends Street_Names
+  case object Altglienicke extends Street_Names
+  case object Friedrichsfelde extends Street_Names
+  case object Bohnsdorf extends Street_Names
+  case object Karlshorst extends Street_Names
+  case object Planterwald extends Street_Names
+  case object Wartenberg extends Street_Names
+  case object Kladow extends Street_Names
