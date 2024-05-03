@@ -1,8 +1,14 @@
 package de.htwg.se.monopoly.aview
 import de.htwg.se.monopoly.model.Dice
+import de.htwg.se.monopoly.controller.Controller
+import de.htwg.se.monopoly.util.Observer
 
-class Tui {
-  val dice = new Dice
+class Tui(controller: Controller) extends Observer{
+
+  controller.add(this);
+  val size: Int = 36;
+
+
 /*
 todo Eingabemöglichkeiten:
 Würfeln = w
@@ -17,8 +23,9 @@ Zug beenden
  */
   def processInputLine(input: String, processState: String): Unit = {
     processState match {
+      case "n" => controller.createBoard(size);
       case "dice" => input match {
-        case "w" => println(dice.thow())
+        case "w" => controller.walk();//println(dice.thow())
         }
       case "landOnCard" => input match
         case "y" => println("Karte gekauft")
