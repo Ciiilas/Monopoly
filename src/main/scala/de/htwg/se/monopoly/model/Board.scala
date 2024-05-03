@@ -1,6 +1,12 @@
 package de.htwg.se.monopoly.model
 
-case class Board(players: Map[Int, Player], cards: Map[Int, Card] ) {
+case class Board(players: Map[String, Player], cards: Map[Int, Card] ) {
+
+  def walk(Boardold: Board, player: String, number_of_fields: Int): Board = {
+    val Board = Board();
+    return Board;
+
+  }
 
 
 

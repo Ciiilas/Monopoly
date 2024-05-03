@@ -1,7 +1,7 @@
 package de.htwg.se.monopoly.model
 
 
-class Board_output_on_console {
+case class Board_output_on_console() {
 
   def playingfield(board_size: Int,card_size_x: Int, card_size_y: Int): Unit = {
     println(barTop(board_size, card_size_x))
