@@ -3,7 +3,7 @@ package de.htwg.se.monopoly.controller
 import de.htwg.se.monopoly.model
 import de.htwg.se.monopoly.util.Observable
 
-class Controller(var grid:Grid) extends Observable{
+class Controller extends Observable{
   def createEmptyGrid(size: Int):Unit = {
     grid = new Grid(size)
     notifyObservers
