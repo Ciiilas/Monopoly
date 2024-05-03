@@ -1,16 +1,13 @@
 package de.htwg.se.monopoly.model
 
-  enum Figure {
+  enum Figure:
     case Boot
-    , Schuh
-    , Hut
-    , Katze
-    , Hund
-    , Auto
-    , Bügeleisen
-    , Schubkarre
-    , Geldsack
-    , Fingerhut
-
-
-  }
+    case Schuh
+    case Hut
+    case Katze
+    case Hund
+    case Auto
+    case Bügeleisen
+    case Schubkarre
+    case Geldsack
+    case Fingerhut
