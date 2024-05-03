@@ -1,7 +1,7 @@
 package de.htwg.se.monopoly
 
 import de.htwg.se.monopoly.aview.Tui
-import de.htwg.se.monopoly.model.{Board, Board_output_on_console}
+import de.htwg.se.monopoly.model.Board_output_on_console
 
 import scala.io.StdIn.readLine
 

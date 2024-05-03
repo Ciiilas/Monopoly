@@ -1,6 +1,6 @@
 package de.htwg.se.monopoly.model
 
-class dice {
+case class Dice() {
   val random = new scala.util.Random
   def thow(): Unit = {
     val thow1 = random.between(1, 7)

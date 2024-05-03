@@ -1,6 +1,5 @@
 package de.htwg.se.monopoly.model
 
-import scala.math.Equiv
 
 class Board_output_on_console {
 
@@ -12,7 +11,7 @@ class Board_output_on_console {
   }
   
   def barTop(board_size: Int, card_size_x: Int): String = {
-    return "┌" + ("─" * card_size_x + "┬") * (board_size - 1) + "─" * card_size_x + "┐"
+    "┌" + ("─" * card_size_x + "┬") * (board_size - 1) + "─" * card_size_x + "┐"
   }
   
   def cell(board_size: Int, card_size_x: Int): String = {
