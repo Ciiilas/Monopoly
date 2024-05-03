@@ -1,8 +1,8 @@
 package de.htwg.se.monopoly.aview
-import de.htwg.se.monopoly.model.dice
+import de.htwg.se.monopoly.model.Dice
 
 class Tui {
-  val dice = new dice
+  val dice = new Dice
 /*
 todo Eingabemöglichkeiten:
 Würfeln = w
