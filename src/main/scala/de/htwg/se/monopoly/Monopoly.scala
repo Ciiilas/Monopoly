@@ -7,14 +7,15 @@ import scala.io.StdIn.readLine
 
 object Monopoly {
   val Tui = new Tui
-  val Board = new Board_output_on_console
+  //val Board = new Board_output_on_console
   def main(args: Array[String]): Unit = {
 
     var input: String = ""
     var processState: String = ""
 
     while input != "q"
-    do {Board.playingfield(2,2,2)
+    do {
+      Board.playingfield(2,2,2)
       processState = readLine()
       input = readLine()
       Tui.processInputLine(input, processState)
