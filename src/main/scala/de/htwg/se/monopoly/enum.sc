@@ -1,4 +1,4 @@
-import de.htwg.se.monopoly.model.Figure
+import de.htwg.se.monopoly.model.Street_Names
 
-println(Figure.Hut)
+println(Street_Names.Schlossallee)
 
