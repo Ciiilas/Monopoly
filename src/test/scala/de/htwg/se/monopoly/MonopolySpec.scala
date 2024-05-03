@@ -1,7 +1,7 @@
 package de.htwg.se.monopoly
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers._
-//import de.htwg.se.monopoly._
+import de.htwg.se.monopoly.model.figure
 class MonopolySpec extends AnyWordSpec {
   "Monopoly" should {
     "have a scalable barTop" in {
@@ -22,3 +22,18 @@ class MonopolySpec extends AnyWordSpec {
     }
   }
 }
+
+
+enum figure:
+case Boot
+  case Schuh
+  case Hut
+  case Katze
+  case Hund
+  case Auto
+  case Bügeleisen
+  case Schubkarre
+  case Geldsack
+  case Fingerhut
+}
+println(figure.Boot)
