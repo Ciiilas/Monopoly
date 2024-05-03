@@ -12,11 +12,11 @@ case class Board_output_on_console() {
   def barTop(board_size: Int, card_size_x: Int): String = {
     "┌" + ("─" * card_size_x + "┬") * (board_size - 1) + "─" * card_size_x + "┐"
   }
-  
+
   def cell(board_size: Int, card_size_x: Int): String = {
     "│" + (" " * card_size_x + "│") * (board_size - 1) + " " * card_size_x + "│"
   }
-  
+
   def barBottom(board_size: Int, card_size_x: Int): String = {
     "└" + ("─" * card_size_x + "┴") * (board_size - 1) + "─" * card_size_x + "┘"
   }
