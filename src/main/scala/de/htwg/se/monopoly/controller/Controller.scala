@@ -12,7 +12,7 @@ class Controller(var board: Board) extends Observable{
  
 
   def walk(): Unit = {
-    Board.walk
+    Board.
 
   }
 

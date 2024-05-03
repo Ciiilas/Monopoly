@@ -1,7 +1,6 @@
 package de.htwg.se.monopoly.model
 
-case class Figure() {
-  enum Figure:
+enum Figure:
   case Boot
   case Schuh
   case Hut
@@ -12,4 +11,3 @@ case class Figure() {
   case Schubkarre
   case Geldsack
   case Fingerhut
-}

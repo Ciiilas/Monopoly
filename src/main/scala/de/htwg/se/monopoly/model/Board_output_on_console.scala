@@ -1,6 +1,5 @@
 package de.htwg.se.monopoly.model
 
-
 case class Board_output_on_console() {
 
   def playingfield(board_size: Int,card_size_x: Int, card_size_y: Int): Unit = {

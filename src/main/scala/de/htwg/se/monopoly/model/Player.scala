@@ -1,12 +1,9 @@
 package de.htwg.se.monopoly.model
 
-case class Player(coins: Int, figure: Option[String], position: Int) {
-  if (figure != None) {
-
-  }
+case class Player(coins: Int, figure: Figure, position: Int) {
+ 
   def set_position(fields: Int): Player = {
-    this.copy(position = this.position + fields);
+    this.copy(position = this.position + fields)
   }
-
-
+  
 }
