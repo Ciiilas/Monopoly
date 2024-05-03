@@ -1,6 +1,7 @@
 package de.htwg.se.monopoly.controller
 
 import de.htwg.se.monopoly.model
+import de.htwg.se.monopoly.model.Board
 import de.htwg.se.monopoly.util.Observable
 
 class Controller(var grid:Grid) extends Observable{
@@ -21,12 +22,5 @@ class Controller(var grid:Grid) extends Observable{
     notifyObservers
   }
 
-  def solve: Boolean = {
-
-    val (success, g) = new Solver(grid).solve
-    grid = g
-    notifyObservers
-    success
-  }
 
 }
