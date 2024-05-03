@@ -5,14 +5,14 @@ import de.htwg.se.monopoly.model.{Board, Board_output_on_console, Dice}
 import de.htwg.se.monopoly.util.Observable
 
 class Controller(var board: Board) extends Observable{
-
+  
   def createBoard(size: Int): Unit = {
-    board = new Board(size);
+    board = new Board(size,size)
   }
  
 
   def walk(): Unit = {
-    Board.
+    Board
 
   }
 
