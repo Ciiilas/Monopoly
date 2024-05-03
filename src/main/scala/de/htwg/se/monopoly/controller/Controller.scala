@@ -8,12 +8,8 @@ class Controller(var board: Board) extends Observable{
 
   def createBoard(size: Int): Unit = {
     board = new Board(size);
-
   }
-  def getDice():Unit = {
-    val dice = new Dice
-    notifyObservers
-  }
+ 
 
   def walk(): Unit = {
 
