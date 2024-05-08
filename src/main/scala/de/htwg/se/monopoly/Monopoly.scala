@@ -7,12 +7,12 @@ import de.htwg.se.monopoly.model.{Board, Card, Player,Figure}
 import scala.io.StdIn.readLine
 
 object Monopoly {
-  println(Figure.Auto)
+  
   //val controller = new Controller(new Board)
   //val Tui = new Tui(controller)
   //val Board = new Board_output_on_console
   def main(args: Array[String]): Unit = {
-
+    println(Figure.Auto)
     var input: String = ""
     var processState: String = ""
 

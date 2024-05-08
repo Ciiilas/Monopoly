@@ -1,12 +1,20 @@
-package de.htwg.se.monopoly.aview
-import de.htwg.se.monopoly.model.Dice
-import de.htwg.se.monopoly.controller.Controller
-import de.htwg.se.monopoly.util.Observer
+package de.htwg.se.monopoly
+package aview
+
+import model.Figure
+import model.Dice
+import controller.Controller
+import util.Observer
+import scala.io.StdIn.readLine
 
 class Tui(controller: Controller) extends Observer{
 
   controller.add(this);
-  val size: Int = 36;
+  val size: Int = 36
+  val walk: Int = 4
+  def run =
+    println(controller.board.toString)
+    getInputAndPrintLoop()
 
 
 /*
@@ -21,11 +29,35 @@ Karte Verkaufen v
 Handeln mit anderen Spielern h
 Zug beenden
  */
-  def processInputLine(input: String, processState: String): Unit = {
+  def getInputAndPrintLoop(): Unit = {
+    println("Neues Spiel gestartet, wählen Sie ihre Spielfigur (Boot, Schuh, Hut, Katze, Hund, Auto, Bügeleisen, Schubkarre, Geldsack, Fingerhut) oder q um zu Beenden")
+    val input = readLine
+    input match
+      case "q" =>
+      case _ => {
+        val figure = input match
+          case "Boot" => Figure.Boot
+          case "Schuh" => Figure.Schuh
+          case "Hut" => Figure.Hut
+          case "Katze" => Figure.Katze
+          case "Hund" => Figure.Hund
+          case "Auto" => Figure.Auto
+          case "Bügeleisen" => Figure.Bügeleisen
+          case "Schubkarre" => Figure.Schubkarre
+          case "Geldsack" => Figure.Geldsack
+          case "Fingerhut" => Figure.Fingerhut
+          case _ => {
+            println("Falsche Spielfigur, versuchen Sie es erneut!")
+            getInputAndPrintLoop()
+          }
+        controller.addPlayer(figure)
+        controller.walkPlayer(figure, walk)
+      }
+    
     processState match {
       case "n" => controller.createBoard(size);
       case "dice" => input match {
-        case "w" => controller.walk();//println(dice.thow())
+        case "w" => controller.walkPlayer();//println(dice.thow())
         }
       case "landOnCard" => input match
         case "y" => println("Karte gekauft")

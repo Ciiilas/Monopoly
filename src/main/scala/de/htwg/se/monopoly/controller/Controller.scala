@@ -1,18 +1,22 @@
-package de.htwg.se.monopoly.controller
+package de.htwg.se.monopoly
+package controller
 
-import de.htwg.se.monopoly.model
-import de.htwg.se.monopoly.model.{Board, Board_output_on_console, Card, Dice, Player}
-import de.htwg.se.monopoly.util.Observable
+import model.{Board, Figure, Player}
+import util.Observable
 
 class Controller(var board: Board) extends Observable{
-
+  
   def createBoard(size: Int): Unit = {
     //board = new Board(size);
+    notifyObservers
   }
- 
+  
+  def addPlayer(figure: Figure): Unit = {
+    
+  }
 
-  def walk(player: Player, card: Card, ): Unit = {
-    board = board.walk()
+  def walkPlayer(player: Player, x:Int): Unit = {
+    board = board.walkPlayer(player, x)
 
   }
 
