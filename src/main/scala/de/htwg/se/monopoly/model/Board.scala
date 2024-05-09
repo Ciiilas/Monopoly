@@ -11,7 +11,9 @@ case class Board(players: Queue[Player], cards: Map[Int, Card], dice: Int) {
   def addPlayer(figure: Figure): Player = this.copy(players.(figure, startPos))
 
   def walkPlayer(): Board = {
-    this.copy(players.head.set_position(dice))
+    var newboard: Board = this
+    newboard.players.head.set_position(dice)
+    return newboard
   }
 
 
