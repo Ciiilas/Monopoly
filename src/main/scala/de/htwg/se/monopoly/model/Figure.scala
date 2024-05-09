@@ -12,3 +12,4 @@ enum Figure(stringRepresentation: String):
   case Schubkarre extends Figure("Schubkarre")
   case Geldsack extends Figure("Geldsack")
   case Fingerhut extends Figure("Fingerhut")
+  case Empty extends Figure(" ")

@@ -16,7 +16,7 @@ class Tui(controller: Controller) extends Observer{
     println(controller.board.toString)
     getInputAndPrintLoop()
 
-
+  override def update = ???
 /*
 todo Eingabemöglichkeiten:
 Würfeln = w
@@ -35,7 +35,7 @@ Zug beenden
     input match
       case "q" =>
       case _ => {
-        val figure = input match
+        val figure: Figure = input match
           case "Boot" => Figure.Boot
           case "Schuh" => Figure.Schuh
           case "Hut" => Figure.Hut
@@ -47,35 +47,35 @@ Zug beenden
           case "Geldsack" => Figure.Geldsack
           case "Fingerhut" => Figure.Fingerhut
           case _ => {
-            println("Falsche Spielfigur, versuchen Sie es erneut!")
-            getInputAndPrintLoop()
+            throw new IllegalStateException("Ungültige Spielfigur")
           }
         controller.addPlayer(figure)
-        controller.walkPlayer(figure, walk)
+        controller.walkPlayer(walk)
+        getInputAndPrintLoop()
       }
-    
-    processState match {
-      case "n" => controller.createBoard(size);
-      case "dice" => input match {
-        case "w" => controller.walkPlayer();//println(dice.thow())
-        }
-      case "landOnCard" => input match
-        case "y" => println("Karte gekauft")
-        case "n" => println("Karte nicht gekauft")
-      case "board" => input match
-        case "t" => println("Wechsle zum Handel")
-        case "s" => println("Wähle eine Karte aus")
-        case "q" => println("Zug beendet")
-      case "hypoteke" => input match
-        case "y" => println("Hypoteke wird auf Karte angelegt")
-        case "n" => println("Hypoteke wird nicht angelegt")
-      case "sell" => input match
-        case "y" => println("Karte wird verkauft")
-        case "n" => println("Karte wird nicht verkauft")
-      case "house" => input match
-        case "y" => println("Haus wird auf Karte gekauft")
-        case "n" => println("Haus wird nicht gekauft")
-    }
+
+//    processState match {
+//      case "n" => controller.createBoard(size);
+//      case "dice" => input match {
+//        case "w" => controller.walkPlayer();//println(dice.thow())
+//        }
+//      case "landOnCard" => input match
+//        case "y" => println("Karte gekauft")
+//        case "n" => println("Karte nicht gekauft")
+//      case "board" => input match
+//        case "t" => println("Wechsle zum Handel")
+//        case "s" => println("Wähle eine Karte aus")
+//        case "q" => println("Zug beendet")
+//      case "hypoteke" => input match
+//        case "y" => println("Hypoteke wird auf Karte angelegt")
+//        case "n" => println("Hypoteke wird nicht angelegt")
+//      case "sell" => input match
+//        case "y" => println("Karte wird verkauft")
+//        case "n" => println("Karte wird nicht verkauft")
+//      case "house" => input match
+//        case "y" => println("Haus wird auf Karte gekauft")
+//        case "n" => println("Haus wird nicht gekauft")
+//    }
   }
 
 }

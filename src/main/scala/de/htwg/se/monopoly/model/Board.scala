@@ -5,7 +5,7 @@ import model.Player
 import scala.collection.immutable.Queue
 
 
-case class Board(players: Queue[Player], cards: Map[Int, Card], dice: Int) {
+case class Board(players: Queue[Player], cards: Map[Int, Card]) {
   private val startPos: Int = 0
 
   def addPlayer(figure: Figure): Board = {
@@ -13,10 +13,14 @@ case class Board(players: Queue[Player], cards: Map[Int, Card], dice: Int) {
     this.copy(players :+ player)
   }
 
-  def walkPlayer(): Board = {
-    var newboard: Board = this
-    newboard.players.head.set_position(dice)
-    return newboard
+  def walkPlayer(x:Int): Board = {
+    val newBoard: Board = this
+    newBoard.players.head.set_position(x)
+    newBoard
+  }
+
+  def getPlayer(): Player = {
+    ???
   }
 
 
