@@ -8,7 +8,7 @@ import scala.collection.immutable.Queue
 case class Board(players: Queue[Player], cards: Map[Int, Card], dice: Int) {
   val startPos: Int = 0
 
-  def addPlayer(figure: Figure): Player = this.copy(players.(figure, startPos))
+  def addPlayer(figure: Figure): Player = this.copy(players.appended(Player(Figure, startPos)))
 
   def walkPlayer(): Board = {
     var newboard: Board = this
