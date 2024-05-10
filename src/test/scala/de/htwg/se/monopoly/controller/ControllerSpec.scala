@@ -1,7 +1,5 @@
-package de.htwg.se.monopoly.aview
+package de.htwg.se.monopoly.controller
 import org.scalatest.matchers.should.Matchers.*
 import org.scalatest.wordspec.AnyWordSpec
 
-class TuiSpec extends AnyWordSpec {
-
-}
+class ControllerSpec extends AnyWordSpec

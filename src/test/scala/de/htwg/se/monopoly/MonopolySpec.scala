@@ -1,5 +1,4 @@
 package de.htwg.se.monopoly
-
 import de.htwg.se.monopoly.model.Board_output_on_console
 import org.scalatest.matchers.should.Matchers.*
 import org.scalatest.wordspec.AnyWordSpec
