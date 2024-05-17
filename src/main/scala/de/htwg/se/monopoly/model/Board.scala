@@ -1,12 +1,20 @@
 package de.htwg.se.monopoly
 package model
 
+import de.htwg.se.monopoly.model.Figure
 import model.Player
-import scala.collection.immutable.Queue
 
 
-case class Board(players: Queue[Player], cards: Map[Int, Card]) {
-  def this(playerCount: Int = 0,)
+case class Board(players: List[Player], cards: Map[Int, Card]) {
+  def this() = {
+    this(List.tabulate(1) { _ => new Player(Figure.Boot)}, cards)
+  }
+  def this() = {
+
+  }
+  def this() = {
+
+  }
   private val startPos: Int = 0
 
   def addPlayer(figure: Figure): Board = {

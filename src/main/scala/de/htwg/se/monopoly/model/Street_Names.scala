@@ -80,7 +80,6 @@ enum Street_Names(stringRepresentation: String):
   case Schmargendorf extends Street_Names("Schmargendorf")
   case Kaulsdorf extends Street_Names("Kaulsdorf")
   case Lankwitz extends Street_Names("Lankwitz")
-  case Niederschoneweide extends Street_Names("Niederschoneweide")
   case Frohnau extends Street_Names("Frohnau")
   case Altglienicke extends Street_Names("Altglienicke")
   case Friedrichsfelde extends Street_Names("Friedrichsfelde")
@@ -89,3 +88,4 @@ enum Street_Names(stringRepresentation: String):
   case Planterwald extends Street_Names("Planterwald")
   case Wartenberg extends Street_Names("Wartenberg")
   case Kladow extends Street_Names("Kladow")
+  case Empty extends Street_Names(" ")
