@@ -13,7 +13,7 @@ class Tui(controller: Controller) extends Observer{
   val size: Int = 36
   val walk: Int = 4
   def run =
-    val board: Board()
+    val board: Board;
     println("Neues Spiel gestartet, wählen Sie ihre Spielfigur (Boot, Schuh, Hut, Katze, Hund, Auto, Bügeleisen, Schubkarre, Geldsack, Fingerhut) oder q um zu Beenden")
     getInputAndPrintLoop()
 
@@ -31,7 +31,7 @@ Handeln mit anderen Spielern h
 Zug beenden
  */
   def getInputAndPrintLoop(): Unit = {
-    
+
     val input = readLine
     input match
       case "q" =>
