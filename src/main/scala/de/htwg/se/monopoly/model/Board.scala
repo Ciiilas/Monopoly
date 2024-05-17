@@ -13,15 +13,13 @@ case class Board(players: List[Player], cards: List[Card]) {
   * !!!übergabe parameter player -> der player der gerade dran ist(aktuelle runde modolo playeranzahl) -> der besagte player ausgetauscht, alle anderen sachen übernommen
   * 2 übergabe parameter Int -> so viele player wie erster int, so viele cards wie zweiter int
   * */
-  def this() = {
+/*  def this() = {
     this(List.tabulate(1) { _ => new Player(Figure.Boot)}, cards)
   }
   def this() = {
-    
   }
   def this() = {
-
-  }
+  }*/
   private val startPos: Int = 0
 
   def addPlayer(figure: Figure): Board = {
