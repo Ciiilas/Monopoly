@@ -2,7 +2,7 @@ package de.htwg.se.monopoly.model
 
 enum Street_Names(stringRepresentation: String):
 
-  override def toString = stringRepresentation
+  override def toString: String = stringRepresentation
   case Schlossallee extends Street_Names("Schlossallee")
   case Bahnhofstrasse extends Street_Names("Bahnhofstrasse")
   case Parkstrasse extends Street_Names("Parkstrasse")
