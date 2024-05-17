@@ -1,10 +1,10 @@
 package de.htwg.se.monopoly
 package aview
 
-import model.Figure
-import model.Dice
+import model.{Board, Dice, Figure}
 import controller.Controller
 import util.Observer
+
 import scala.io.StdIn.readLine
 
 class Tui(controller: Controller) extends Observer{
@@ -13,7 +13,8 @@ class Tui(controller: Controller) extends Observer{
   val size: Int = 36
   val walk: Int = 4
   def run =
-    println(controller.board.toString)
+    val board: Board()
+    println("Neues Spiel gestartet, wählen Sie ihre Spielfigur (Boot, Schuh, Hut, Katze, Hund, Auto, Bügeleisen, Schubkarre, Geldsack, Fingerhut) oder q um zu Beenden")
     getInputAndPrintLoop()
 
 
@@ -30,7 +31,7 @@ Handeln mit anderen Spielern h
 Zug beenden
  */
   def getInputAndPrintLoop(): Unit = {
-    println("Neues Spiel gestartet, wählen Sie ihre Spielfigur (Boot, Schuh, Hut, Katze, Hund, Auto, Bügeleisen, Schubkarre, Geldsack, Fingerhut) oder q um zu Beenden")
+    
     val input = readLine
     input match
       case "q" =>
@@ -51,6 +52,7 @@ Zug beenden
           }
         controller.addPlayer(figure)
         controller.walkPlayer(walk)
+        update
         getInputAndPrintLoop()
       }
 
