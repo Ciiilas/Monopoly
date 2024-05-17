@@ -59,7 +59,7 @@ Zug beenden
 
   }
 
-def runGameLoop(): Unit = {
+ def runGameLoop(): Unit = {
   //controller.walkPlayer(walk)
   //    processState match {
   //      case "n" => controller.createBoard(size);
@@ -83,6 +83,7 @@ def runGameLoop(): Unit = {
   //        case "y" => println("Haus wird auf Karte gekauft")
   //        case "n" => println("Haus wird nicht gekauft")
   //    }
+  controller.moveTopPlayerBottom();
 
 }
 
