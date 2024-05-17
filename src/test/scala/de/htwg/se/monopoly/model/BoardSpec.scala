@@ -4,6 +4,7 @@ import org.scalatest.wordspec.AnyWordSpec
 import de.htwg.se.monopoly.model.Board
 import de.htwg.se.monopoly.model.Player
 import de.htwg.se.monopoly.model.Figure
+import de.htwg.se.monopoly.model.Figure.Boot
 
 import scala.collection.immutable.Queue
 
@@ -12,7 +13,7 @@ class BoardSpec extends AnyWordSpec {
     "have a player walk" {
       Board(Queue[Player](Player(Figure.Boot,0)), Map[Int, Card]()).walkPlayer(5) should be (Board(Queue[Player](Player(Figure.Boot,5)), Map[Int, Card]()))
     }
-    
+    Board().addPlayer(Boot)
     
   }
 
