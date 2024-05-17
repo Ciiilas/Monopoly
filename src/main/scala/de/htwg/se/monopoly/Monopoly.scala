@@ -12,6 +12,8 @@ object Monopoly {
   //val controller = new Controller(new Board)
   //val Tui = new Tui(controller)
   //val Board = new Board_output_on_console
+
+  //todo komment delete later
   def main(args: Array[String]): Unit = {
     println("Welcome to Monopoly")
     val size: Int = 36
