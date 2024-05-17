@@ -19,6 +19,10 @@ class Controller(var board: Board) extends Observable{
     board = board.walkPlayer(x)
 
   }
+  
+  def getNumberOfCards(): Int = {
+    board.getNumberOfCards();
+  }
 
   override def toString: String = Board.toString
 

@@ -25,6 +25,10 @@ case class Board(players: Queue[Player], cards: Map[Int, Card]) {
   }
 
   val size: Int = cards.size
+  
+  def getNumberOfCards(): Int = {
+    this.cards.size;
+  }
 
 
 
