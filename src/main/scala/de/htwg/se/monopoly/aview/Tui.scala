@@ -1,7 +1,7 @@
 package de.htwg.se.monopoly
 package aview
 
-import model.{Board, Dice, Figure, Player}
+import model.{Board, Card, Dice, Figure, Player}
 import controller.Controller
 import util.Observer
 
@@ -87,7 +87,7 @@ Zug beenden
     controller.moveTopPlayerBottom();
 
 }
-
+  val cards: Vector[Card] = controller.getCards()
 
   private val eol: String = sys.props("line.separator")
 

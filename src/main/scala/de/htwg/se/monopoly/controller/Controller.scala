@@ -1,7 +1,7 @@
 package de.htwg.se.monopoly
 package controller
 
-import model.{Board, Figure, Player}
+import model.{Board, Card, Figure, Player}
 import util.Observable
 
 class Controller(var board: Board) extends Observable{
@@ -30,6 +30,10 @@ class Controller(var board: Board) extends Observable{
   
   def moveTopPlayerBottom(): Unit = {
     board.moveTopPlayerBottom();
+  }
+  
+  def getCards(): Vector[Card] = {
+    board.getCards()
   }
 
   override def toString: String = Board.toString
