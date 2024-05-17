@@ -16,7 +16,7 @@ class Tui(controller: Controller) extends Observer{
     println(controller.board.toString)
     getInputAndPrintLoop()
 
-  override def update = ???
+ 
 /*
 todo Eingabemöglichkeiten:
 Würfeln = w
@@ -78,4 +78,25 @@ Zug beenden
 //    }
   }
 
+
+  private val eol: String = sys.props("line.separator")
+
+  def barTop(board_size: Int = 10, card_size_x: Int = 15): String = "┌" + ("─" * card_size_x + "┬") * (board_size - 1) + "─" * card_size_x + "┐" + eol
+
+  def cell(board_size: Int = 10, card_size_x: Int = 15): String = "│" + (" " * card_size_x + "│") * (board_size - 1) + " " * card_size_x + "│" + eol
+
+  def barBottom(board_size: Int, card_size_x: Int): String = "└" + ("─" * card_size_x + "┴") * (board_size - 1) + "─" * card_size_x + "┘" + eol
+
+  def playingfield(board_size: Int,card_size_x: Int, card_size_y: Int): Unit = {
+    println(barTop(board_size, card_size_x))
+    for (a <- 1 to card_size_y)
+      println(cell(board_size, card_size_x))
+    println(barBottom(board_size,card_size_x))
+  }
+  
+  override def update(): Unit = {
+    playingfield()
+
+    
+  }
 }
