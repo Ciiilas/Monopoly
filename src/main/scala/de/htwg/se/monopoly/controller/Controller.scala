@@ -27,6 +27,10 @@ class Controller(var board: Board) extends Observable{
   def getPlayers(): List[Player] = {
     board.getPlayers();
   }
+  
+  def moveTopPlayerBottom(): Unit = {
+    board.moveTopPlayerBottom();
+  }
 
   override def toString: String = Board.toString
 

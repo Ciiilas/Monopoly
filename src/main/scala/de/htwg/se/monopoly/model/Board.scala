@@ -36,7 +36,7 @@ case class Board(players: List[Player], cards: List[Card]) {
   def getPlayer(): Player = {
     ???
   }
-  
+
   def getPlayers(): List[Player] = {
     this.players
   }
@@ -45,6 +45,11 @@ case class Board(players: List[Player], cards: List[Card]) {
   
   def getNumberOfCards(): Int = {
     this.cards.size;
+  }
+
+  def moveTopPlayerBottom(): Unit = {
+
+
   }
 
 
