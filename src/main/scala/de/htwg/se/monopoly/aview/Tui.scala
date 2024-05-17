@@ -11,7 +11,7 @@ class Tui(controller: Controller) extends Observer{
 
   controller.add(this);
   val size: Int = 36
-  val walk: Int = 4
+  //val walk: Int = 4
   def run =
     println("Neues Spiel gestartet, wählen Sie ihre Spielfigur (Boot, Schuh, Hut, Katze, Hund, Auto, Bügeleisen, Schubkarre, Geldsack, Fingerhut) oder q um zu Beenden")
     askPlayerNamesAndGeneratePlayers()
@@ -53,7 +53,7 @@ Zug beenden
             throw new IllegalStateException("Ungültige Spielfigur!")
           }
         controller.addPlayer(figure)
-        controller.walkPlayer(walk)
+        //controller.walkPlayer()
         update
         askPlayerNamesAndGeneratePlayers()
       }
@@ -62,32 +62,30 @@ Zug beenden
   }
 
   def runGameLoop(): Unit = {
-    println("test")
-    //controller.walkPlayer(walk)
-    //    processState match {
-    //      case "n" => controller.createBoard(size);
-    //      case "dice" => input match {
-    //        case "w" => controller.walkPlayer();//println(dice.thow())
-    //        }
-    //      case "landOnCard" => input match
-    //        case "y" => println("Karte gekauft")
-    //        case "n" => println("Karte nicht gekauft")
-    //      case "board" => input match
-    //        case "t" => println("Wechsle zum Handel")
-    //        case "s" => println("Wähle eine Karte aus")
-    //        case "q" => println("Zug beendet")
-    //      case "hypoteke" => input match
-    //        case "y" => println("Hypoteke wird auf Karte angelegt")
-    //        case "n" => println("Hypoteke wird nicht angelegt")
-    //      case "sell" => input match
-    //        case "y" => println("Karte wird verkauft")
-    //        case "n" => println("Karte wird nicht verkauft")
-    //      case "house" => input match
-    //        case "y" => println("Haus wird auf Karte gekauft")
-    //        case "n" => println("Haus wird nicht gekauft")
-    //    }
+    val input = readLine
+        input match {
+          case "n" => controller.createBoard(size);
+          case "dice" => input match {
+            case "w" => controller.walkPlayer();
+            }
+          case "landOnCard" => input match
+            case "y" => println("Karte gekauft")
+            case "n" => println("Karte nicht gekauft")
+          case "board" => input match
+            case "t" => println("Wechsle zum Handel")
+            case "s" => println("Wähle eine Karte aus")
+            case "q" => println("Zug beendet")
+          case "hypoteke" => input match
+            case "y" => println("Hypoteke wird auf Karte angelegt")
+            case "n" => println("Hypoteke wird nicht angelegt")
+          case "sell" => input match
+            case "y" => println("Karte wird verkauft")
+            case "n" => println("Karte wird nicht verkauft")
+          case "house" => input match
+            case "y" => println("Haus wird auf Karte gekauft")
+            case "n" => println("Haus wird nicht gekauft")
+        }
     controller.moveTopPlayerBottom();
-
 }
   val cards: Vector[Card] = controller.getCards
 
@@ -113,17 +111,13 @@ Zug beenden
       print(betweenbars(board_size, 20))
     println(barBottom(board_size,20))
   }
-
   def playerInformation(players: Set[Player]): Unit = {
     for(i <- players) {
       println(i.toString);
     }
-
   }
-
   override def update: Unit = {
     playingfield(controller.getNumberOfCards)
     playerInformation(controller.getPlayers());
-
   }
 }

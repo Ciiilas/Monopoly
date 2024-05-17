@@ -15,7 +15,6 @@ case class Board(players: Set[Player]=Set(), cards: Vector[Card]=Vector()) {
 
 
 
-
 //================================================
   //            Player
   private val startPos: Int = 0
@@ -48,7 +47,7 @@ case class Board(players: Set[Player]=Set(), cards: Vector[Card]=Vector()) {
   val size: Int = cards.size
 
   def getNumberOfCards: Int = this.cards.size
-  
+
 }
 
 

@@ -1,7 +1,7 @@
 package de.htwg.se.monopoly
 package controller
 
-import model.{Board, Card, Figure, Player}
+import model.{Board, Card, Figure, Player,Dice}
 import util.Observable
 
 class Controller(var board: Board) extends Observable{
@@ -15,9 +15,10 @@ class Controller(var board: Board) extends Observable{
     board = board.addPlayer(figure)
   }
 
-  def walkPlayer(x:Int): Unit = {
-    board = board.walkPlayer(x)
-
+  def walkPlayer(): Dice = {
+    val dice: Dice = new Dice;
+    board = board.walkPlayer(dice);
+    return dice;
   }
   
   def getNumberOfCards: Int = {
