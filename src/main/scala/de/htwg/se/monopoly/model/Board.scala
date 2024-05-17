@@ -29,12 +29,13 @@ case class Board(players: Set[Player]=Set(), cards: Vector[Card]=Vector()) {
   }
 
 
-  def getPlayers(): Set[Player] = {
-    this.players
-  }
-  
+  def getPlayers(): Set[Player] = this.players
+
+  def getPlayer(): Player = this.players.head
+
+
   def moveTopPlayerBottom(): Unit = {
-    
+
   }
 
 //================================================
