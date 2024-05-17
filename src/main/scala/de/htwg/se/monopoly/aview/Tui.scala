@@ -1,7 +1,7 @@
 package de.htwg.se.monopoly
 package aview
 
-import model.{Board, Dice, Figure}
+import model.{Board, Dice, Figure, Player}
 import controller.Controller
 import util.Observer
 
@@ -95,10 +95,14 @@ Zug beenden
       println(cell(board_size, 20))
     println(barBottom(board_size,20))
   }
+  
+  def playerInformation(players: List[Player]): Unit = {
+    
+  }
 
   override def update: Unit = {
-    playingfield(controller.getNumberOfCards())
-
+    playingfield(controller.getNumberOfCards());
+    playerInformation(controller.getPlayers());
 
   }
 }

@@ -17,7 +17,7 @@ case class Board(players: List[Player], cards: List[Card]) {
     this(List.tabulate(1) { _ => new Player(Figure.Boot)}, cards)
   }
   def this() = {
-
+    
   }
   def this() = {
 
@@ -37,6 +37,10 @@ case class Board(players: List[Player], cards: List[Card]) {
 
   def getPlayer(): Player = {
     ???
+  }
+  
+  def getPlayers(): List[Player] = {
+    this.players
   }
 
   val size: Int = cards.size

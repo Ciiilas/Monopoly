@@ -10,4 +10,6 @@ case class Player(figure: Figure, position: Int) {
     this.copy(position = this.position + fields)
   }
   
+
+  
 }

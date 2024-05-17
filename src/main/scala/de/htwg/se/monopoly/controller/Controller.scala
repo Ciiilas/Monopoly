@@ -23,6 +23,10 @@ class Controller(var board: Board) extends Observable{
   def getNumberOfCards(): Int = {
     board.getNumberOfCards();
   }
+  
+  def getPlayers(): List[Player] = {
+    board.getPlayers();
+  }
 
   override def toString: String = Board.toString
 
