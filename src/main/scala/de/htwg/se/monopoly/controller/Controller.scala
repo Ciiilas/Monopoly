@@ -24,7 +24,7 @@ class Controller(var board: Board) extends Observable{
     board.getNumberOfCards();
   }
   
-  def getPlayers(): List[Player] = {
+  def getPlayers(): Set[Player] = {
     board.getPlayers();
   }
   

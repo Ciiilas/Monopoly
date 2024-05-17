@@ -17,7 +17,7 @@ object Monopoly {
     val size: Int = 36
     val player = Player(Figure.Boot, 0)
     val card = Card(Street_Names.Schlossallee, 0, Figure.Empty)
-    val controller = new Controller(Board(List(player), List(card)))
+    val controller = new Controller(new Board(Figure.Boot).fillCards())
     val tui = new Tui(controller)
     tui.run
   }
