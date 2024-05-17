@@ -14,7 +14,9 @@ class Tui(controller: Controller) extends Observer{
   val walk: Int = 4
   def run =
     println("Neues Spiel gestartet, wählen Sie ihre Spielfigur (Boot, Schuh, Hut, Katze, Hund, Auto, Bügeleisen, Schubkarre, Geldsack, Fingerhut) oder q um zu Beenden")
-    getInputAndPrintLoop()
+    askPlayerNamesAndGeneratePlayers()
+    runGameLoop();
+
 
 
 /*
@@ -29,7 +31,7 @@ Karte Verkaufen v
 Handeln mit anderen Spielern h
 Zug beenden
  */
-  def getInputAndPrintLoop(): Unit = {
+  def askPlayerNamesAndGeneratePlayers(): Unit = {
     val input = readLine
     input match
       case "q" =>
@@ -51,32 +53,38 @@ Zug beenden
         controller.addPlayer(figure)
         controller.walkPlayer(walk)
         update
-        getInputAndPrintLoop()
+        askPlayerNamesAndGeneratePlayers()
       }
 
-//    processState match {
-//      case "n" => controller.createBoard(size);
-//      case "dice" => input match {
-//        case "w" => controller.walkPlayer();//println(dice.thow())
-//        }
-//      case "landOnCard" => input match
-//        case "y" => println("Karte gekauft")
-//        case "n" => println("Karte nicht gekauft")
-//      case "board" => input match
-//        case "t" => println("Wechsle zum Handel")
-//        case "s" => println("Wähle eine Karte aus")
-//        case "q" => println("Zug beendet")
-//      case "hypoteke" => input match
-//        case "y" => println("Hypoteke wird auf Karte angelegt")
-//        case "n" => println("Hypoteke wird nicht angelegt")
-//      case "sell" => input match
-//        case "y" => println("Karte wird verkauft")
-//        case "n" => println("Karte wird nicht verkauft")
-//      case "house" => input match
-//        case "y" => println("Haus wird auf Karte gekauft")
-//        case "n" => println("Haus wird nicht gekauft")
-//    }
+
   }
+
+def runGameLoop(): Unit = {
+  //controller.walkPlayer(walk)
+  //    processState match {
+  //      case "n" => controller.createBoard(size);
+  //      case "dice" => input match {
+  //        case "w" => controller.walkPlayer();//println(dice.thow())
+  //        }
+  //      case "landOnCard" => input match
+  //        case "y" => println("Karte gekauft")
+  //        case "n" => println("Karte nicht gekauft")
+  //      case "board" => input match
+  //        case "t" => println("Wechsle zum Handel")
+  //        case "s" => println("Wähle eine Karte aus")
+  //        case "q" => println("Zug beendet")
+  //      case "hypoteke" => input match
+  //        case "y" => println("Hypoteke wird auf Karte angelegt")
+  //        case "n" => println("Hypoteke wird nicht angelegt")
+  //      case "sell" => input match
+  //        case "y" => println("Karte wird verkauft")
+  //        case "n" => println("Karte wird nicht verkauft")
+  //      case "house" => input match
+  //        case "y" => println("Haus wird auf Karte gekauft")
+  //        case "n" => println("Haus wird nicht gekauft")
+  //    }
+
+}
 
 
   private val eol: String = sys.props("line.separator")
