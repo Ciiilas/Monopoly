@@ -6,6 +6,7 @@ import scala.collection.immutable.Queue
 
 
 case class Board(players: Queue[Player], cards: Map[Int, Card]) {
+  def this(playerCount: Int = 0,)
   private val startPos: Int = 0
 
   def addPlayer(figure: Figure): Board = {
