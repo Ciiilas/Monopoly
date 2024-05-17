@@ -1,3 +1,5 @@
+
+
 enum Street_Names(stringRepresentation: String):
 
   override def toString: String = stringRepresentation
@@ -103,10 +105,28 @@ enum Figure(stringRepresentation: String):
   case Empty extends Figure(" ")
 
 
-case class Card(name: Street_Names = Street_Names.Empty, houses: Int = 0, owner: Figure = Figure.Empty) {
+case class Card(streetName: Street_Names = Street_Names.Empty, houses: Int = 0, owner: Figure = Figure.Empty) {
 
 
 }
 
+case class Player(figure: Figure = Figure.Empty, position: Int = 0) {
+  
+}
 
-Street_Names.values.dropRight(Street_Names.values.length-3).map(street=>Card(name=street)).toVector
+case class Board(players: Set[Player]=Set(), cards: Vector[Card]=Vector()) {
+  def this(figure: Figure) = {
+    this(Set(new Player(figure)))
+}
+  def getCards: Vector[Card] = {
+    this.cards
+  }
+}
+
+val cards: Vector[Card] = Street_Names.values.dropRight(Street_Names.values.length-3).map(street=>Card(streetName=street)).toVector
+
+cards.zipWithIndex.map { case (street_name, i) => s"│ ${street_name.streetName}" + (" " * (19 - street_name.streetName.toString.length))}.mkString
+
+
+
+

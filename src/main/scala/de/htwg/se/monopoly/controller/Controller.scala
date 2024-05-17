@@ -20,8 +20,8 @@ class Controller(var board: Board) extends Observable{
 
   }
   
-  def getNumberOfCards(): Int = {
-    board.getNumberOfCards();
+  def getNumberOfCards: Int = {
+    board.getNumberOfCards;
   }
   
   def getPlayers(): Set[Player] = {
@@ -32,8 +32,8 @@ class Controller(var board: Board) extends Observable{
     board.moveTopPlayerBottom();
   }
   
-  def getCards(): Vector[Card] = {
-    board.getCards()
+  def getCards: Vector[Card] = {
+    board.getCards
   }
 
   override def toString: String = Board.toString
