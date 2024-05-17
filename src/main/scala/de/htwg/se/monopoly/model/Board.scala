@@ -5,9 +5,9 @@ import de.htwg.se.monopoly.model.Figure
 import model.Player
 
 
-case class Board(players: List[Player], cards: Vector[Card]) {
+case class Board(players: Set[Player]=Set(), cards: Vector[Card]=Vector()) {
   def this(figure: Figure) = {
-    this(List(new Player(figure)), Vector())
+    this(Set(new Player(figure)))
   }
   def fillCards()={copy(players, Street_Names.values.dropRight(Street_Names.values.length-36).map(street=>Card(name=street)).toVector)}
 
@@ -19,7 +19,7 @@ case class Board(players: List[Player], cards: Vector[Card]) {
 //            Player
   def addPlayer(figure: Figure): Board = {
     val player = Player(figure, startPos)
-    this.copy(players :+ player)
+    this.copy(players + player)
   }
 
   def walkPlayer(x:Int): Board = {
@@ -29,7 +29,7 @@ case class Board(players: List[Player], cards: Vector[Card]) {
   }
 
 
-  def getPlayers(): List[Player] = {
+  def getPlayers(): Player = {
     this.players
   }
 
