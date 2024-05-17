@@ -28,7 +28,8 @@ case class Board(players: Set[Player]=Set(), cards: Vector[Card]=Vector()) {
     newBoard
   }
 
-
+  def getPlayer(): Player = this.players.head
+  
   def getPlayers(): Player = {
     this.players
   }
