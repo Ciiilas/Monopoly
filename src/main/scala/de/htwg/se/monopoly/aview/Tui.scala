@@ -94,7 +94,7 @@ Zug beenden
     println(barBottom(board_size,20))
   }
 
-  override def update(): Unit = {
+  override def update: Unit = {
     playingfield(controller.getNumberOfCards())
 
 
