@@ -23,10 +23,8 @@ case class Board(players: Set[Player]=Set(), cards: Vector[Card]=Vector()) {
     this.copy(players + player)
   }
 
-  def walkPlayer(x:Int): Board = {
-    val newBoard: Board = this
-    newBoard.players.head.set_position(x)
-    newBoard
+  def walkPlayer(Dice): Unit = {
+    this.players.head.
   }
 
 

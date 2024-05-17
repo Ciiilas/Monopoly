@@ -11,7 +11,7 @@ class Tui(controller: Controller) extends Observer{
 
   controller.add(this);
   val size: Int = 36
-  val walk: Int = 4
+  //val walk: Int = 4
   def run =
     println("Neues Spiel gestartet, wählen Sie ihre Spielfigur (Boot, Schuh, Hut, Katze, Hund, Auto, Bügeleisen, Schubkarre, Geldsack, Fingerhut) oder q um zu Beenden")
     askPlayerNamesAndGeneratePlayers()
@@ -51,7 +51,7 @@ Zug beenden
             throw new IllegalStateException("Ungültige Spielfigur")
           }
         controller.addPlayer(figure)
-        controller.walkPlayer(walk)
+        //controller.walkPlayer()
         update
         askPlayerNamesAndGeneratePlayers()
       }
