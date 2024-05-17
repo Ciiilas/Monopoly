@@ -1,7 +1,7 @@
 package de.htwg.se.monopoly
 package aview
 
-import model.{Board, Dice, Figure}
+import model.{Board, Dice, Figure, Player}
 import controller.Controller
 import util.Observer
 
@@ -13,7 +13,6 @@ class Tui(controller: Controller) extends Observer{
   val size: Int = 36
   val walk: Int = 4
   def run =
-    val board: Board()
     println("Neues Spiel gestartet, wählen Sie ihre Spielfigur (Boot, Schuh, Hut, Katze, Hund, Auto, Bügeleisen, Schubkarre, Geldsack, Fingerhut) oder q um zu Beenden")
     getInputAndPrintLoop()
 
@@ -31,7 +30,6 @@ Handeln mit anderen Spielern h
 Zug beenden
  */
   def getInputAndPrintLoop(): Unit = {
-    
     val input = readLine
     input match
       case "q" =>
@@ -96,9 +94,16 @@ Zug beenden
     println(barBottom(board_size,20))
   }
 
-  override def update: Unit = {
-    playingfield(controller.getNumberOfCards())
+  def playerInformation(players: List[Player]): Unit = {
+    for(i <- players) {
+      println(i.toString);
+    }
 
+  }
+
+  override def update: Unit = {
+    playingfield(controller.getNumberOfCards());
+    playerInformation(controller.getPlayers());
 
   }
 }
