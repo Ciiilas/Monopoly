@@ -60,6 +60,7 @@ Zug beenden
   }
 
 def runGameLoop(): Unit = {
+  //controller.walkPlayer(walk)
   //    processState match {
   //      case "n" => controller.createBoard(size);
   //      case "dice" => input match {
