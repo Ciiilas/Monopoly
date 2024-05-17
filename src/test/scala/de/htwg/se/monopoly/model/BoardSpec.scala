@@ -9,11 +9,8 @@ import scala.collection.immutable.Queue
 
 class BoardSpec extends AnyWordSpec {
   "Board" should {
-    "have a player walk" {
+    "have a player walk" in {
       Board(Queue[Player](Player(Figure.Boot,0)), Map[Int, Card]()).walkPlayer(5) should be (Board(Queue[Player](Player(Figure.Boot,5)), Map[Int, Card]()))
     }
-    
-    
   }
-
 }
