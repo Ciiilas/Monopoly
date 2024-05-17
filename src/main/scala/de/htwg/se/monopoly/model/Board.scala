@@ -9,7 +9,9 @@ case class Board(players: Set[Player]=Set(), cards: Vector[Card]=Vector()) {
   def this(figure: Figure) = {
     this(Set(new Player(figure)))
   }
-  def fillCards()={copy(players, Street_Names.values.dropRight(Street_Names.values.length-36).map(street=>Card(name=street)).toVector)}
+  def fillCards()={
+    copy(players, Street_Names.values.dropRight(Street_Names.values.length-36).map(street=>Card(name=street)).toVector)
+  }
 
 
 
