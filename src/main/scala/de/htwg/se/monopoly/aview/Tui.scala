@@ -1,7 +1,7 @@
 package de.htwg.se.monopoly
 package aview
 
-import model.{Board, Card, Dice, Figure, Player}
+import model.{Board, Card, Dice, Figure, Player, Street_Names}
 import controller.Controller
 import util.Observer
 
@@ -49,7 +49,9 @@ Zug beenden
           case "Geldsack" => Figure.Geldsack
           case "Fingerhut" => Figure.Fingerhut
           case _ => {
-            throw new IllegalStateException("Ungültige Spielfigur")
+            println("Ungültige Spielfigur!")
+            askPlayerNamesAndGeneratePlayers()
+            throw new IllegalStateException("Ungültige Spielfigur!")
           }
         controller.addPlayer(figure)
         //controller.walkPlayer()
@@ -86,20 +88,28 @@ Zug beenden
         }
     controller.moveTopPlayerBottom();
 }
-  val cards: Vector[Card] = controller.getCards()
+  val cards: Vector[Card] = controller.getCards
 
   private val eol: String = sys.props("line.separator")
 
+
   def barTop(board_size: Int = 10, card_size_x: Int = 15): String = "┌" + ("─" * card_size_x + "┬") * (board_size - 1) + "─" * card_size_x + "┐" + eol
 
-  def cell(board_size: Int = 10, card_size_x: Int = 15): String = "│" + (" " * card_size_x + "│") * (board_size - 1) + " " * card_size_x + "│" + eol
+
+  def cell:String = {
+    cards.zipWithIndex.map { case (street_name, i) => s"│ ${street_name.streetName}" + (" " * (19 - street_name.streetName.toString.length))}.mkString} + "│\n"
+
+  def betweenbars(board_size: Int, card_size_x: Int = 20): String = "│" + (" " * card_size_x + "│") * (board_size - 1) + " " * card_size_x + "│" + eol
+
+
 
   def barBottom(board_size: Int, card_size_x: Int): String = "└" + ("─" * card_size_x + "┴") * (board_size - 1) + "─" * card_size_x + "┘" + eol
 
   def playingfield(board_size: Int): Unit = {
-    println(barTop(board_size, 20))
-    for (a <- 1 to 10)
-      println(cell(board_size, 20))
+    print(barTop(board_size, 20))
+    print(cell)
+    for (a <- 1 to 9)
+      print(betweenbars(board_size, 20))
     println(barBottom(board_size,20))
   }
   def playerInformation(players: Set[Player]): Unit = {
@@ -108,7 +118,7 @@ Zug beenden
     }
   }
   override def update: Unit = {
-    playingfield(controller.getNumberOfCards());
+    playingfield(controller.getNumberOfCards)
     playerInformation(controller.getPlayers());
   }
 }
