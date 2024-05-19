@@ -8,6 +8,7 @@ import util.Observer
 import scala.io.StdIn.readLine
 
 class Tui(controller: Controller) extends Observer{
+  //todo delete comment
 
   controller.add(this);
   val size: Int = 36
