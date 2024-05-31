@@ -4,10 +4,12 @@ package model
 import de.htwg.se.monopoly.model.Figure
 import model.Player
 
+import scala.collection.immutable.ListSet
 
-case class Board(players: Set[Player]=Set(), cards: Vector[Card]=Vector()) {
+
+case class Board(players: ListSet[Player]=ListSet.empty, cards: Vector[Card]=Vector()) {
   def this(figure: Figure) = {
-    this(Set(new Player(figure)))
+    this(ListSet(Player(figure)))
   }
   def fillCards: Board ={
     copy(players, Street_Names.values.dropRight(Street_Names.values.length-36).map(street=>Card(streetName = street)).toVector)
@@ -24,27 +26,33 @@ case class Board(players: Set[Player]=Set(), cards: Vector[Card]=Vector()) {
     this.copy(players + player)
   }
 
-  def walkPlayer(x:Int): Board = {
+  def walkPlayer(x:Dice): Board = {
     val newBoard: Board = this
     newBoard.players.head.set_position(x)
     newBoard
   }
 
 
-  def getPlayers(): Set[Player] = this.players
+  def getPlayers: ListSet[Player] = this.players
 
-  def getPlayer(): Player = this.players.head
+  def getPlayer: Player = this.players.head
 
 
-  def moveTopPlayerBottom(): Unit = {
-
+  def moveTopPlayerBottom: Board = {
+    val newBoard: Board = this
+    val listSet1: ListSet[Player] = newBoard.players
+    val listSet2: ListSet[Player] = listSet1.drop(1) + listSet1.head
+    this.copy(listSet2)
   }
   
-  def getCards: Vector[Card] = this.cards
+  
 
 //================================================
 //          Card
+
   val size: Int = cards.size
+  
+  def getCards: Vector[Card] = this.cards
 
   def getNumberOfCards: Int = this.cards.size
 

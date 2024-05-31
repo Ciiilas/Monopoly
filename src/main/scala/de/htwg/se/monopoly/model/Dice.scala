@@ -1,11 +1,13 @@
-package de.htwg.se.monopoly.model
+package de.htwg.se.monopoly
+package model
 
-case class Dice() {
-  val random = new scala.util.Random
-  def thow(): Unit = {
-    val thow1 = random.between(1, 7)
-    val thow2 = random.between(1, 7)
-  }
-  def doublets(thow1:Int, thow2:Int): Boolean = thow1 == thow2
-    
+
+case class Dice(throw1:Int = 2, throw2:Int = 2) {
+  def this() = this (throw1 = scala.util.Random.between(1, 7), throw2 = scala.util.Random.between(1, 7))
+
+
+  def doublets: Boolean = throw1 == throw2
+
+  def throwsAdded: Int = throw1 + throw2
 }
+

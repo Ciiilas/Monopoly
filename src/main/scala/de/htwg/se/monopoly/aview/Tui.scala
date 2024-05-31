@@ -10,13 +10,14 @@ import scala.io.StdIn.readLine
 class Tui(controller: Controller) extends Observer{
   //todo delete comment
 
-  controller.add(this);
+  controller.add(this)
   val size: Int = 36
+
   //val walk: Int = 4
-  def run =
+  def run(): Unit =
     println("Neues Spiel gestartet, wählen Sie ihre Spielfigur (Boot, Schuh, Hut, Katze, Hund, Auto, Bügeleisen, Schubkarre, Geldsack, Fingerhut) oder q um zu Beenden")
     askPlayerNamesAndGeneratePlayers()
-    runGameLoop();
+    runGameLoop()
 
 
 
@@ -35,8 +36,8 @@ Zug beenden
   def askPlayerNamesAndGeneratePlayers(): Unit = {
     val input = readLine
     input match
-      case "q" =>
-      case _ => {
+      case "q" => runGameLoop()
+      case _ => 
         val figure: Figure = input match
           case "Boot" => Figure.Boot
           case "Schuh" => Figure.Schuh
@@ -48,16 +49,16 @@ Zug beenden
           case "Schubkarre" => Figure.Schubkarre
           case "Geldsack" => Figure.Geldsack
           case "Fingerhut" => Figure.Fingerhut
-          case _ => {
+          case _ => 
             println("Ungültige Spielfigur!")
             askPlayerNamesAndGeneratePlayers()
             throw new IllegalStateException("Ungültige Spielfigur!")
-          }
+          
         controller.addPlayer(figure)
         //controller.walkPlayer()
         update
         askPlayerNamesAndGeneratePlayers()
-      }
+      
 
 
   }
@@ -86,7 +87,7 @@ Zug beenden
             case "y" => println("Haus wird auf Karte gekauft")
             case "n" => println("Haus wird nicht gekauft")
         }
-    controller.moveTopPlayerBottom();
+    controller.moveTopPlayerBottom()
 }
   val cards: Vector[Card] = controller.getCards
 
@@ -109,16 +110,16 @@ Zug beenden
     print(barTop(board_size, 20))
     print(cell)
     for (a <- 1 to 9)
-      print(betweenbars(board_size, 20))
+      print(betweenbars(board_size))
     println(barBottom(board_size,20))
   }
   def playerInformation(players: Set[Player]): Unit = {
     for(i <- players) {
-      println(i.toString);
+      println(i.toString)
     }
   }
   override def update: Unit = {
     playingfield(controller.getNumberOfCards)
-    playerInformation(controller.getPlayers());
+    playerInformation(controller.getPlayers)
   }
 }

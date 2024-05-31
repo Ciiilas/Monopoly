@@ -4,6 +4,8 @@ package controller
 import model.{Board, Card, Figure, Player,Dice}
 import util.Observable
 
+import scala.collection.immutable.ListSet
+
 class Controller(var board: Board) extends Observable{
   
   def createBoard(size: Int): Unit = {
@@ -15,22 +17,21 @@ class Controller(var board: Board) extends Observable{
     board = board.addPlayer(figure)
   }
 
-  def walkPlayer(): Dice = {
-    val dice: Dice = new Dice;
-    board = board.walkPlayer(dice);
-    return dice;
+  def walkPlayer(): Unit = {
+    val dice: Dice = new Dice
+    board = board.walkPlayer(dice)
   }
   
   def getNumberOfCards: Int = {
-    board.getNumberOfCards;
+    board.getNumberOfCards
   }
   
-  def getPlayers(): Set[Player] = {
-    board.getPlayers();
+  def getPlayers: ListSet[Player] = {
+    board.getPlayers
   }
   
   def moveTopPlayerBottom(): Unit = {
-    board.moveTopPlayerBottom();
+    board.moveTopPlayerBottom
   }
   
   def getCards: Vector[Card] = {
