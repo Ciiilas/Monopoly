@@ -5,10 +5,10 @@ import model.{Board, Card, Dice, Figure, Player, Street_Names}
 import controller.Controller
 import util.Observer
 
+import scala.collection.immutable.ListSet
 import scala.io.StdIn.readLine
 
 class Tui(controller: Controller) extends Observer{
-  //todo delete comment
 
   controller.add(this)
   val size: Int = 36
@@ -37,7 +37,7 @@ Zug beenden
     val input = readLine
     input match
       case "q" => runGameLoop()
-      case _ => 
+      case _ =>
         val figure: Figure = input match
           case "Boot" => Figure.Boot
           case "Schuh" => Figure.Schuh
@@ -49,16 +49,16 @@ Zug beenden
           case "Schubkarre" => Figure.Schubkarre
           case "Geldsack" => Figure.Geldsack
           case "Fingerhut" => Figure.Fingerhut
-          case _ => 
+          case _ =>
             println("Ungültige Spielfigur!")
             askPlayerNamesAndGeneratePlayers()
             throw new IllegalStateException("Ungültige Spielfigur!")
-          
+
         controller.addPlayer(figure)
         //controller.walkPlayer()
         update
         askPlayerNamesAndGeneratePlayers()
-      
+
 
 
   }
@@ -66,10 +66,13 @@ Zug beenden
   def runGameLoop(): Unit = {
     val input = readLine
         input match {
-          case "n" => controller.createBoard(size);
-          case "dice" => input match {
-            case "w" => controller.walkPlayer();
-            }
+          case "w" => {
+            println("test")
+            controller.walkPlayer()
+            println("test2")
+          }
+
+
           case "landOnCard" => input match
             case "y" => println("Karte gekauft")
             case "n" => println("Karte nicht gekauft")
@@ -86,8 +89,11 @@ Zug beenden
           case "house" => input match
             case "y" => println("Haus wird auf Karte gekauft")
             case "n" => println("Haus wird nicht gekauft")
+
         }
+    update
     controller.moveTopPlayerBottom()
+    runGameLoop()
 }
   val cards: Vector[Card] = controller.getCards
 
@@ -102,8 +108,6 @@ Zug beenden
 
   def betweenbars(board_size: Int, card_size_x: Int = 20): String = "│" + (" " * card_size_x + "│") * (board_size - 1) + " " * card_size_x + "│" + eol
 
-
-
   def barBottom(board_size: Int, card_size_x: Int): String = "└" + ("─" * card_size_x + "┴") * (board_size - 1) + "─" * card_size_x + "┘" + eol
 
   def playingfield(board_size: Int): Unit = {
@@ -113,13 +117,19 @@ Zug beenden
       print(betweenbars(board_size))
     println(barBottom(board_size,20))
   }
-  def playerInformation(players: Set[Player]): Unit = {
+
+  def playerInformation(players: ListSet[Player]): Unit = {
     for(i <- players) {
       println(i.toString)
     }
   }
+
+  def currentPlayer(players: ListSet[Player]): Unit = {
+    println(players.head.toString)
+  }
   override def update: Unit = {
     playingfield(controller.getNumberOfCards)
+    currentPlayer(controller.getPlayers)
     playerInformation(controller.getPlayers)
   }
 }

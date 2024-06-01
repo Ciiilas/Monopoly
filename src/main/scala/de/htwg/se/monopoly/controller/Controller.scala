@@ -7,19 +7,18 @@ import util.Observable
 import scala.collection.immutable.ListSet
 
 class Controller(var board: Board) extends Observable{
-  
-  def createBoard(size: Int): Unit = {
-    //board = new Board(size);
-    notifyObservers
-  }
+
   
   def addPlayer(figure: Figure): Unit = {
     board = board.addPlayer(figure)
+    notifyObservers
   }
+
 
   def walkPlayer(): Unit = {
     val dice: Dice = new Dice
-    board = board.walkPlayer(dice)
+    val newBoard: Board = board.walkPlayer(dice)
+    notifyObservers
   }
   
   def getNumberOfCards: Int = {
@@ -32,6 +31,7 @@ class Controller(var board: Board) extends Observable{
   
   def moveTopPlayerBottom(): Unit = {
     board.moveTopPlayerBottom
+    notifyObservers
   }
   
   def getCards: Vector[Card] = {

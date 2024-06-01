@@ -8,6 +8,9 @@ case class Dice(throw1:Int = 2, throw2:Int = 2) {
 
   def doublets: Boolean = throw1 == throw2
 
-  def throwsAdded: Int = throw1 + throw2
+  def throwsAdded(): Int = {
+    val added: Int = this.throw1 + this.throw2
+    added
+  }
 }
 

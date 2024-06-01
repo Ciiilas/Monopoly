@@ -22,14 +22,13 @@ case class Board(players: ListSet[Player]=ListSet.empty, cards: Vector[Card]=Vec
   private val startPos: Int = 0
 
   def addPlayer(figure: Figure): Board = {
-    val player = Player(figure, startPos)
+    val player: Player = Player(figure, startPos)
     this.copy(players + player)
   }
 
   def walkPlayer(x:Dice): Board = {
-    val newBoard: Board = this
-    newBoard.players.head.set_position(x)
-    newBoard
+    val player:Player  = players.head.set_position(x)
+    this.copy(players)
   }
 
 
@@ -45,13 +44,13 @@ case class Board(players: ListSet[Player]=ListSet.empty, cards: Vector[Card]=Vec
     this.copy(listSet2)
   }
   
-  
+
 
 //================================================
 //          Card
 
   val size: Int = cards.size
-  
+
   def getCards: Vector[Card] = this.cards
 
   def getNumberOfCards: Int = this.cards.size
